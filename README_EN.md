@@ -15,22 +15,27 @@
 
 M9Auto is a script for automating daily tasks in the Reverse:1999 environment, based on [Waydroid](https://github.com/waydroid/waydroid) and [M9A](https://github.com/MaaXYZ/M9A) projects.
 
-## Usage Instructions
+## Usage Instruction
 
 ### Environment Setup
 
 1. Prerequisites:
-- Configure [Waydroid](https://github.com/waydroid/waydroid)
-- Install Reverse:1999 in Waydroid
-- Install [M9A](https://github.com/MaaXYZ/M9A)
-- Configure daily tasks in M9A
+    - Configure [Waydroid](https://github.com/waydroid/waydroid)
+    - Install Reverse:1999 in Waydroid
+    - Install [M9A](https://github.com/MaaXYZ/M9A)
+    - Configure daily tasks in M9A
 
-2. Copy `.env.example` and rename it to `.env`:
+2. Clone the project locally
     ```sh
-    cp .env.example .env
+    git clone https://github.com/Ezer015/M9Auto
     ```
 
-3. Edit `.env` and configure the `M9A_CLI` variable based on the `M9A` path:
+3. Copy `.env.sample` and rename it to `.env`:
+    ```sh
+    cp .env.sample .env
+    ```
+
+4. Edit `.env` and configure the `M9A_CLI` variable based on the `M9A` path:
     ```env
     M9A_CLI=<M9A_PATH>/install/MaaPiCli
     ```

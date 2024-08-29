@@ -20,17 +20,22 @@ M9Auto 是一个基于 [Waydroid](https://github.com/waydroid/waydroid) 和 [M9A
 ### 环境配置
 
 1. 前置条件：
-- 配置 [Waydroid](https://github.com/waydroid/waydroid) 
-- 在 Waydroid 中安装 重返未来：1999
-- 安装 [M9A](https://github.com/MaaXYZ/M9A) 
-- 在 M9A 中配置日常任务
+    - 配置 [Waydroid](https://github.com/waydroid/waydroid) 
+    - 在 Waydroid 中安装 重返未来：1999
+    - 安装 [M9A](https://github.com/MaaXYZ/M9A) 
+    - 在 M9A 中配置日常任务
 
-2. 复制 `.env.example` 并重命名为 `.env`：
+2. 克隆项目到本地
     ```sh
-    cp .env.example .env
+    git clone https://github.com/Ezer015/M9Auto
     ```
 
-3. 编辑 `.env`，根据 `M9A` 路径配置 `M9A_CLI` 变量：
+3. 复制 `.env.sample` 并重命名为 `.env`：
+    ```sh
+    cp .env.sample .env
+    ```
+
+4. 编辑 `.env`，根据 `M9A` 路径配置 `M9A_CLI` 变量：
     ```env
     M9A_CLI=<M9A_PATH>/install/MaaPiCli
     ```
