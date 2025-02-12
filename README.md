@@ -8,7 +8,7 @@
 
 <div align="center">
 
-  <a href="./README_EN.md"><img src="https://img.shields.io/badge/English-d9d9d9"></a>
+  <a href="./README.en.md"><img src="https://img.shields.io/badge/English-d9d9d9"></a>
   <a href="./README.md"><img src="https://img.shields.io/badge/简体中文-d9d9d9"></a>
 
 </div>
@@ -37,7 +37,7 @@ M9Auto 是一个基于 [Waydroid](https://github.com/waydroid/waydroid) 和 [M9A
 
 4. 编辑 `.env`，根据 `M9A` 路径配置 `M9A_CLI` 变量：
     ```env
-    M9A_CLI=<M9A_PATH>/install/MaaPiCli
+    M9A_CLI=<M9A_PATH>/MaaPiCli
     ```
 
 ### 运行脚本
@@ -49,7 +49,7 @@ M9Auto 是一个基于 [Waydroid](https://github.com/waydroid/waydroid) 和 [M9A
 
 2. 将以下运行 `auto_start.sh` 的命令设置为开机自动执行：
     ```sh
-    <BASH_PATH> <M9AUTO_PATH>/auto_start.sh
+    <BASH_PATH> <M9AUTO_PATH>/auto_start.sh &
     ```
 
 ## 许可证

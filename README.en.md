@@ -9,7 +9,7 @@
 <div align="center">
 
   <a href="./README.md"><img src="https://img.shields.io/badge/简体中文-d9d9d9"></a>
-  <a href="./README_EN.md"><img src="https://img.shields.io/badge/English-d9d9d9"></a>
+  <a href="./README.en.md"><img src="https://img.shields.io/badge/English-d9d9d9"></a>
 
 </div>
 
@@ -37,7 +37,7 @@ M9Auto is a script for automating daily tasks in the Reverse:1999 environment, b
 
 4. Edit `.env` and configure the `M9A_CLI` variable based on the `M9A` path:
     ```env
-    M9A_CLI=<M9A_PATH>/install/MaaPiCli
+    M9A_CLI=<M9A_PATH>/MaaPiCli
     ```
 
 ### Running the Script
@@ -49,7 +49,7 @@ M9Auto is a script for automating daily tasks in the Reverse:1999 environment, b
 
 2. Set the following command to run `auto_start.sh` on startup:
     ```sh
-    <BASH_PATH> <M9AUTO_PATH>/auto_start.sh
+    <BASH_PATH> <M9AUTO_PATH>/auto_start.sh &
     ```
 
 ## License
