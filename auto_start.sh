@@ -1,19 +1,45 @@
-BASE_DIR=$(dirname $0)
+#!/bin/bash
 
-. $BASE_DIR/.env
+BASE_DIR="$(dirname "$0")"
+ENV_FILE="$BASE_DIR/.env"
+LOG_FILE="$BASE_DIR/.log"
+RUN_SCRIPT="$BASE_DIR/run.sh"
 
-CURR_TIME=$(date +%H:%M:%S)
-TODAY=$(date +%Y-%m-%d)
-YESTERDAY=$(date -d "yesterday" +%Y-%m-%d)
+# Check required files
+[[ ! -f "$ENV_FILE" ]] && {
+    echo "Environment file not found: $ENV_FILE"
+    exit 1
+}
+[[ ! -f "$RUN_SCRIPT" ]] && {
+    echo "Run script not found: $RUN_SCRIPT"
+    exit 1
+}
+[[ ! -f "$LOG_FILE" ]] && touch "$LOG_FILE"
 
-echo "[$TODAY $CURR_TIME] M9Auto Started." >> $BASE_DIR/.log
-if [[ "$CURR_TIME" < "05:00:00" ]]; then
-    if [[ "$PREV_TIME" < "$YESTERDAY 05:00:00" ]]; then
-        $BASE_DIR/run.sh
-    fi
+# shellcheck source=.env
+source "$ENV_FILE"
+
+DAILY_RUN_TIME="05:00:00"
+CURR_TIME="$(date +%H:%M:%S)"
+TODAY="$(date +%Y-%m-%d)"
+YESTERDAY="$(date -d "yesterday" +%Y-%m-%d)"
+
+log_message() {
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] $1" >>"$LOG_FILE"
+}
+
+log_message "M9Auto Started."
+
+# Calculate reference time point
+if [[ "$CURR_TIME" < "$DAILY_RUN_TIME" ]]; then
+    CHECK_TIME="$YESTERDAY $DAILY_RUN_TIME"
 else
-    if [[ "$PREV_TIME" < "$TODAY 05:00:00" ]]; then
-        $BASE_DIR/run.sh
-    fi
+    CHECK_TIME="$TODAY $DAILY_RUN_TIME"
 fi
-echo [$(date +"%Y-%m-%d %H:%M:%S")] "M9Auto Accomplished." >> $BASE_DIR/.log
+
+# Execute if last run time is earlier than reference time
+if [[ "$PREV_TIME" < "$CHECK_TIME" ]]; then
+    bash "$RUN_SCRIPT" &>>"$LOG_FILE"
+fi
+
+log_message "M9Auto Accomplished."
