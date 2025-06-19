@@ -13,43 +13,48 @@
 
 </div>
 
-M9Auto 是一个基于 [Waydroid](https://github.com/waydroid/waydroid) 和 [M9A](https://github.com/MaaXYZ/M9A) 的 重返未来：1999 自动化脚本，实现了在 Linux 环境下 Reverse：1999 的自动日常。
+M9Auto 是一个基于 [Waydroid](https://github.com/waydroid/waydroid) 和 [M9A](https://github.com/MaaXYZ/M9A) 的自动化脚本，实现了在 Linux 环境下 重返未来：1999 的自动日常。
 
 ## 使用说明
 
 ### 环境配置
 
 1. 前置条件：
-    - 配置 [Waydroid](https://github.com/waydroid/waydroid) 
+    - 配置 [Waydroid](https://github.com/waydroid/waydroid)
     - 在 Waydroid 中安装 重返未来：1999
-    - 安装 [M9A](https://github.com/MaaXYZ/M9A) 
+    - 安装 [M9A](https://github.com/MaaXYZ/M9A)
     - 在 M9A 中配置日常任务
 
 2. 克隆项目到本地
+
     ```sh
     git clone https://github.com/Ezer015/M9Auto
     ```
 
 3. 复制 `.env.sample` 并重命名为 `.env`：
+
     ```sh
     cp .env.sample .env
     ```
 
 4. 编辑 `.env`，根据 `M9A` 路径配置 `M9A_CLI` 变量：
+
     ```env
     M9A_CLI=<M9A_PATH>/MaaPiCli
     ```
 
 ### 运行脚本
 
-1. 确保 `auto_start.sh` 和 `run.sh` 具有可执行权限：
+1. 确保 `scheduler.sh` 和 `run.sh` 具有可执行权限：
+
     ```sh
-    chmod +x auto_start.sh run.sh
+    chmod +x scheduler.sh run.sh
     ```
 
-2. 将以下运行 `auto_start.sh` 的命令设置为开机自动执行：
+2. 将以下运行 `scheduler.sh` 的命令设置为开机自动执行：
+
     ```sh
-    <BASH_PATH> <M9AUTO_PATH>/auto_start.sh &
+    <BASH_PATH> <M9AUTO_PATH>/scheduler.sh &
     ```
 
 ## 许可证

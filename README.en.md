@@ -26,30 +26,35 @@ M9Auto is a script for automating daily tasks in the Reverse:1999 environment, b
     - Configure daily tasks in M9A
 
 2. Clone the project locally
+
     ```sh
     git clone https://github.com/Ezer015/M9Auto
     ```
 
 3. Copy `.env.sample` and rename it to `.env`:
+
     ```sh
     cp .env.sample .env
     ```
 
 4. Edit `.env` and configure the `M9A_CLI` variable based on the `M9A` path:
+
     ```env
     M9A_CLI=<M9A_PATH>/MaaPiCli
     ```
 
 ### Running the Script
 
-1. Ensure that `auto_start.sh` and `run.sh` have executable permissions:
+1. Ensure that `scheduler.sh` and `run.sh` have executable permissions:
+
     ```sh
-    chmod +x auto_start.sh run.sh
+    chmod +x scheduler.sh run.sh
     ```
 
-2. Set the following command to run `auto_start.sh` on startup:
+2. Set the following command to run `scheduler.sh` on startup:
+
     ```sh
-    <BASH_PATH> <M9AUTO_PATH>/auto_start.sh &
+    <BASH_PATH> <M9AUTO_PATH>/scheduler.sh &
     ```
 
 ## License
